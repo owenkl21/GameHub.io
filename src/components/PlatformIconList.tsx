@@ -1,5 +1,5 @@
 import { Platform } from '../hooks/useGames';
-import { Icon, HStack } from '@chakra-ui/react';
+import { Icon, HStack, Badge } from '@chakra-ui/react';
 import {
   FaWindows,
   FaPlaystation,
@@ -29,11 +29,17 @@ const PlatformIconList = ({ platforms }: Props) => {
     web: BsGlobe,
   };
   return (
-    <HStack>
-      {platforms.map((platform) => (
-        <Icon boxSize={5} color={'gray.400'} as={iconMap[platform.slug]}></Icon>
-      ))}
-    </HStack>
+    <>
+      <HStack>
+        {platforms.map((platform) => (
+          <Icon
+            boxSize={5}
+            color={'gray.400'}
+            as={iconMap[platform.slug]}
+          ></Icon>
+        ))}
+      </HStack>
+    </>
   );
 };
 
