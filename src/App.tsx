@@ -8,6 +8,8 @@ function App() {
   return (
     <>
       <Grid
+        overflowY={'scroll'}
+        w={'100vw'}
         templateAreas={{
           base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`,
