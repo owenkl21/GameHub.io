@@ -10,7 +10,11 @@ import useGenres, { Genre } from '../hooks/useGenres';
 import getCroppedImageUrl from './../services/image-url';
 import GenreLoader from './GenreLoader';
 
-const GenreList = () => {
+interface Props {
+  onSelectedGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   return (
     <VStack m={2} align={'start'}>
@@ -26,7 +30,14 @@ const GenreList = () => {
                 borderRadius={8}
                 src={getCroppedImageUrl(genre.image_background)}
               />
-              <Button variant={'link'} fontSize={'lg'}>
+              <Button
+                variant={'link'}
+                fontSize={'lg'}
+                onClick={() => {
+                  onSelectedGenre(genre);
+                  console.log(genre);
+                }}
+              >
                 {genre.name}
               </Button>
             </HStack>
