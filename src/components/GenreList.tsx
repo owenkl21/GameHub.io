@@ -26,7 +26,7 @@ const GenreList = () => {
                 borderRadius={8}
                 src={getCroppedImageUrl(genre.image_background)}
               />
-              <Button variant={'list'} fontSize={'lg'}>
+              <Button variant={'link'} fontSize={'lg'}>
                 {genre.name}
               </Button>
             </HStack>
