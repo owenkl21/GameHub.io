@@ -12,9 +12,10 @@ import GenreLoader from './GenreLoader';
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectedGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   return (
     <VStack m={2} align={'start'}>
@@ -33,6 +34,7 @@ const GenreList = ({ onSelectedGenre }: Props) => {
               <Button
                 variant={'link'}
                 fontSize={'lg'}
+                fontWeight={selectedGenre?.id === genre.id ? 'bold' : 'normal'}
                 onClick={() => {
                   onSelectedGenre(genre);
                   console.log(genre);
