@@ -61,12 +61,14 @@ function App() {
                 console.log(platform);
               }}
             />
-            <SortSelector
-              onSelectSortOrder={(order) => {
-                setSelectedOrder(order);
-                console.log(order);
-              }}
-            />
+            <Show above="md">
+              <SortSelector
+                onSelectSortOrder={(order) => {
+                  setSelectedOrder(order);
+                  console.log(order);
+                }}
+              />
+            </Show>
           </HStack>
           <GameGrid
             selectedPlatform={selectedPlatform}
