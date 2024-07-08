@@ -19,10 +19,10 @@ interface Props {
 const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   return (
-    <VStack m={0} align={'start'}>
+    <VStack m={2} align={'start'}>
       {error && ''}
       {isLoading && <GenreLoader />}
-      <Heading>Genres</Heading>
+      <Heading fontSize={'2xl'}>Genres</Heading>
       <List>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
