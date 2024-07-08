@@ -16,6 +16,7 @@ function App() {
     null
   );
   const [selectedOrder, setSelectedOrder] = useState<string>('');
+  const [searchedGame, setSearchedGame] = useState<string>('');
 
   return (
     <>
@@ -32,7 +33,7 @@ function App() {
         }}
       >
         <GridItem area={'nav'}>
-          <NavBar />
+          <NavBar onSearch={(search) => setSearchedGame(search)} />
         </GridItem>
         <Show above="lg">
           <GridItem paddingX={5} area={'aside'}>
@@ -62,6 +63,7 @@ function App() {
             selectedPlatform={selectedPlatform}
             selectedGenre={selectedGenre}
             selectedOrder={selectedOrder}
+            searchedGame={searchedGame}
           />
         </GridItem>
       </Grid>
