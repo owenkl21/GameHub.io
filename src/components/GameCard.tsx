@@ -1,4 +1,4 @@
-import { Card, CardBody, Heading, HStack, Image, Box } from '@chakra-ui/react';
+import { Card, CardBody, Heading, HStack, Image } from '@chakra-ui/react';
 import { Game } from '../hooks/useGames';
 import PlatformIconList from './PlatformIconList';
 import CriticScore from './CriticScore';
@@ -12,6 +12,7 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card height={{ lg: '430px' }}>
       <Image
+        borderTopRadius={10}
         height={{ lg: '320px' }}
         objectFit={'cover'}
         src={getCroppedImageUrl(game.background_image)}
