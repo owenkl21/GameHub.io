@@ -19,7 +19,7 @@ interface Props {
 const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   return (
-    <VStack m={2} align={'start'}>
+    <VStack m={1} align={'start'}>
       {error && ''}
       {isLoading && <GenreLoader />}
       <Heading fontSize={'2xl'}>Genres</Heading>
