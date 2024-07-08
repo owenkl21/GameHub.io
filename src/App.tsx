@@ -49,7 +49,11 @@ function App() {
             selectedGenre={selectedGenre}
             selectedPlatform={selectedPlatform}
           />
-          <HStack spacing={5} paddingLeft={2.5} marginBottom={5}>
+          <HStack
+            spacing={{ base: 2, lg: 5 }}
+            paddingLeft={{ base: 2, lg: 2.5 }}
+            marginBottom={5}
+          >
             <PlatformSelector
               selectedPlatform={selectedPlatform}
               onSelectPlatform={(platform) => {
