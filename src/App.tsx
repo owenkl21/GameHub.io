@@ -8,6 +8,7 @@ import { useState } from 'react';
 import PlatformSelector from './components/PlatformSelector';
 import { Platform } from './hooks/useGames';
 import SortSelector from './components/SortSelector';
+import GameHeading from './components/GameHeading';
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
@@ -44,6 +45,10 @@ function App() {
           </GridItem>
         </Show>
         <GridItem area={'main'}>
+          <GameHeading
+            selectedGenre={selectedGenre}
+            selectedPlatform={selectedPlatform}
+          />
           <HStack spacing={5} paddingLeft={2.5} marginBottom={5}>
             <PlatformSelector
               selectedPlatform={selectedPlatform}
